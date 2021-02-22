@@ -1,0 +1,26 @@
+syntax = "proto3";
+package foobar;
+option go_package = ".;foobar";
+
+message Foo {
+  string foo = 1;
+}
+
+message Bar {
+  string bar = 1;
+}
+
+message Error {
+  string message = 1;
+}
+
+message Result {
+  oneof data {
+    Error error = 1;
+    Bar bar = 2;
+  }
+}
+
+service FooBarService {
+  rpc Execute(Foo) returns (Result) {}
+}
