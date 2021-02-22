@@ -12,10 +12,8 @@ Run server
 Run client 
 `go run client/client.go`
 
-Docker build 
-
+Docker build
 `docker build -t grpc-quickstart:latest . `
 
 Docker run
-
 `docker run -p 50051:50051 grpc-quickstart:latest`
